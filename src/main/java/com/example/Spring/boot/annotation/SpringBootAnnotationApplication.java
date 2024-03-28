@@ -1,7 +1,6 @@
 package com.example.Spring.boot.annotation;
 
 import com.example.Spring.boot.annotation.controller.MyController;
-import com.example.Spring.boot.annotation.controller.PizzaController;
 import com.example.Spring.boot.annotation.lazy.LazyLoader;
 import com.example.Spring.boot.annotation.repository.MyRepository;
 import com.example.Spring.boot.annotation.service.MyService;
@@ -29,8 +28,8 @@ public class SpringBootAnnotationApplication {
 		System.out.println(myRepository.testing());
 		LazyLoader lazyLoader=context.getBean(LazyLoader.class);
 		System.out.println(lazyLoader);
-//		VegPizza vegPizza=context.getBean(VegPizza.class);
-//		System.out.println(vegPizza.getPizza());
+		VegPizza vegPizza=context.getBean(VegPizza.class);
+		System.out.println(vegPizza.getPizza());
 	}
 
 }
