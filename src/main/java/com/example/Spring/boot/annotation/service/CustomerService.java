@@ -10,5 +10,6 @@ public interface CustomerService {
     public CustomerDto CustomerFindById(long id) throws ResourceNotFoundException;
     public CustomerDto createCustomer(CustomerDto customerDto);
     public CustomerDto updateCustomer(long id,CustomerDto customerDto) throws ResourceNotFoundException;
+    public CustomerDto partiallyUpdateCustomer(long id,CustomerDto customerDto) throws ResourceNotFoundException;
     public void deleteCustomer(long id) throws ResourceNotFoundException;
 }

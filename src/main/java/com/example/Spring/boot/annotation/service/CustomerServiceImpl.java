@@ -55,6 +55,13 @@ public class CustomerServiceImpl implements CustomerService {
         Customer customerUpdate = this.customerRepository.save(customer);
         return this.modelMapper.map(customerUpdate, CustomerDto.class);
     }
+    public CustomerDto partiallyUpdateCustomer(long id, CustomerDto customerDto) throws ResourceNotFoundException {
+        Customer existingCustomer = customerRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(Constant.NOT_FOUND+" "+ id));
+        modelMapper.map(customerDto, existingCustomer);
+        Customer updatedCustomer = customerRepository.save(existingCustomer);
+        return modelMapper.map(updatedCustomer, CustomerDto.class);
+    }
 
     @Override
     public void deleteCustomer(long id) throws ResourceNotFoundException {
