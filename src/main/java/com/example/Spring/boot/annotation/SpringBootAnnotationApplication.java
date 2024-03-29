@@ -7,11 +7,13 @@ import com.example.Spring.boot.annotation.service.MyService;
 import com.example.Spring.boot.annotation.service.VegPizza;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class SpringBootAnnotationApplication {
 
 	public static void main(String[] args) {
+
 
 		var context =SpringApplication.run(SpringBootAnnotationApplication.class, args);
 //		PizzaController pizzaController=context.getBean(PizzaController.class);
