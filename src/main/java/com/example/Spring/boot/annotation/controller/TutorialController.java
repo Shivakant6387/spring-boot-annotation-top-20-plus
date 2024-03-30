@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/tutorial")
+@RequestMapping(path = "/api/tutorial", produces = "application/xml")
 public class TutorialController {
     @Autowired
     TutorialRepository tutorialRepository;
