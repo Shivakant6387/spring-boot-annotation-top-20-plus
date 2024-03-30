@@ -40,8 +40,14 @@ public class CustomerController {
         this.customerService.deleteCustomer(id);
         return Constant.DELETE;
     }
+
     @PatchMapping("/customer/update/{id}")
     public CustomerDto partiallyUpdateCustomer(@PathVariable long id, @RequestBody CustomerDto customerDto) throws ResourceNotFoundException {
         return this.customerService.partiallyUpdateCustomer(id, customerDto);
+    }
+
+    @GetMapping("/param/{id}")
+    public CustomerDto getCustomerParamById(@RequestParam long id) throws ResourceNotFoundException {
+        return this.customerService.CustomerFindById(id);
     }
 }
